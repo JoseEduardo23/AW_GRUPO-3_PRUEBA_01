@@ -1,56 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="Estilos/style.css">
+    <title>Registro y Inicio de sesión</title>
 </head>
 <body>
-    <div class="container">
-        <!-- Formulario de Login -->
-        <div class="form-container" id="loginForm">
-            <h2>Login</h2>
-            <form>
-                <label for="loginUsername">Username</label>
-                <input type="text" id="loginUsername" name="username" required>
-                
-                <label for="loginPassword">Password</label>
-                <input type="password" id="loginPassword" name="password" required>
-                
-                <button type="submit">Login</button>
-            </form>
-            <p>¿No tienes cuenta? <a href="#" onclick="toggleForms()">Crea una</a></p>
-            <p id="loginMessage"></p>
-        </div>
 
-        <!-- Formulario de Registro -->
-        <div class="form-container" id="registerForm" style="display: none;">
-            <h2>Registro</h2>
-            <form>
-                <label for="registerUsername">Username</label>
-                <input type="text" id="registerUsername" name="username" required>
-                
-                <label for="registerEmail">Email</label>
-                <input type="email" id="registerEmail" name="email" required>
-                
-                <label for="registerPassword">Password</label>
-                <input type="password" id="registerPassword" name="password" required>
-                
-                <button type="submit">Registrar</button>
-            </form>
-            <p>¿Ya tienes cuenta? <a href="#" onclick="toggleForms()">Inicia sesión</a></p>
-            <p id="registerMessage"></p>
-        </div>
+<div class="container">
+    <!-- Formulario de Login -->
+    <div class="form-container" id="loginForm">
+        <h2>Iniciar sesión</h2>
+        <form id="loginForm">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" name="email" required>
+            
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required>
+            
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="#" onclick="toggleForms()">Crea una</a></p>
+        <p id="message"></p>
     </div>
 
-    <script>
-        function toggleForms() {
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
-            registerForm.style.display = registerForm.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
+    <!-- Formulario de Registro -->
+    <div class="form-container" id="registerForm" style="display: none;">
+        <h2>Registro</h2>
+        <form id="registerForm">
+            <label for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" name="email" placeholder="Introduce tu correo" required>
+            
+            <button type="submit">Registrar</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="#" onclick="toggleForms()">Inicia sesión</a></p>
+        <p id="registerMessage"></p>
+    </div>
+</div>
+
+<script src="JS/main.js"></script>
+
 </body>
 </html>
