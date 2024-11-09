@@ -1,13 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba_01_Gr#3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Películas</title>
+  <link rel="stylesheet" href="Estilos/styles.css">
 </head>
 <body>
-    <h1>CONSUMO DE APIs PUBLICAS, MOSTRAR LA INFORMACION AL MOMENTO DE CONSUMIR LAS APIs PUBLICAS, DISEÑO Y ESTRUCTURA A SU DISCRECION
-        :)
-    </h1>
+  <!-- Header con Dropdown y barra de búsqueda -->
+  <div id="header">
+    <!-- Dropdown para seleccionar género -->
+    <select id="genre-select">
+      <option value="">Seleccionar Género</option>
+      <option value="Action">Acción</option>
+      <option value="Adventure">Aventura</option>
+      <option value="Animation">Animación</option>
+      <option value="Biography">Biografía</option>
+      <option value="Comedy">Comedia</option>
+      <option value="Crime">Crimen</option>
+      <option value="Documentary">Documental</option>
+      <option value="Drama">Drama</option>
+      <option value="Family">Familia</option>
+      <option value="Fantasy">Fantasía</option>
+      <option value="Horror">Terror</option>
+      <option value="Mystery">Misterio</option>
+      <option value="Romance">Romántica</option>
+      <option value="Sci-Fi">Ciencia Ficción</option>
+      <option value="Thriller">Suspenso</option>
+      <option value="War">Guerra</option>
+    </select>
+
+    <!-- Barra de búsqueda -->
+    <div id="search">
+      <input type="text" id="search-input" placeholder="Buscar película..." />
+    </div>
+  </div>
+
+  <!-- Contenedor de las películas -->
+  <div id="peliculas-container"></div>
+
+  <!-- Paginador -->
+  <div id="pagination">
+    <button id="prev" onclick="cambiarPagina(-1)">Anterior</button>
+    <button id="next" onclick="cambiarPagina(1)">Siguiente</button>
+  </div>
+
+  <!-- Script donde se escribirá la lógica de JS -->
+  <script src="JS/nuevo.js"></script>
 </body>
 </html>
