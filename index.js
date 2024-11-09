@@ -10,16 +10,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Sirve los archivos estáticos
-app.use(express.static(path.join(__dirname, 'src')));
+app.use('/',express.static(path.join(__dirname, './src/Login')));
+app.use('/Inicio', express.static(path.join(__dirname, './src/Main')));
 
-// Ruta para la página de inicio
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Login', 'login.html'));
+// Ruta principal
+app.get('/',(req, res)=>{
+    res.sendFile(path.join(__dirname,'./src/Login/login.html'));
 });
 
-// Ruta para el archivo HTML en 'Main'
-app.get('/main', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Main', 'index.html'));
+app.get('/Inicio',(req, res)=>{
+    res.sendFile(path.join(__dirname,'./src/Main/index.html'));
 });
 
 // Inicia el servidor
