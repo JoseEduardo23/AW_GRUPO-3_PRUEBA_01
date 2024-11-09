@@ -17,27 +17,33 @@ body {
     width: 100%;
     max-width: 400px;
 }
-
+.logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
 .form-container {
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 2rem;
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin-top: 1rem;
+    
 }
 
 .form-container h2 {
     margin-bottom: 1rem;
-    color: #333333;
+    color: #ffffff;
 }
 
 .form-container label {
     display: block;
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: #666666;
+    color: #ffffff;
     text-align: left;
 }
 
@@ -45,9 +51,12 @@ body {
     width: 100%;
     padding: 0.8rem;
     margin-top: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: none;
+    border-bottom: 1px solid #ffffff;
     font-size: 1rem;
+    background: transparent;
+    outline: none;
+    color: #ffffff;
 }
 
 .form-container button {
@@ -69,7 +78,7 @@ body {
 .form-container p {
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: #666666;
+    color: #ffffff;
 }
 
 .form-container a {
