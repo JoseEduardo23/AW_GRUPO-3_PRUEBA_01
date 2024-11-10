@@ -67,7 +67,7 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
     // Verifica que la contraseña ingresada coincida con la generada
     if (enteredPassword === generatedPassword) {
         document.getElementById("message").innerText = "Sesión iniciada correctamente";
-        window.location.href = "/../src/Main/index.html";
+        window.location.href = "/Inicio";
     } else {
         document.getElementById("message").innerText = "Credenciales incorrectas.";
     }
