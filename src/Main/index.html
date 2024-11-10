@@ -12,22 +12,9 @@
     <!-- Dropdown para seleccionar género -->
     <select id="genre-select">
       <option value="">Seleccionar Género</option>
-      <option value="Action">Acción</option>
-      <option value="Adventure">Aventura</option>
-      <option value="Animation">Animación</option>
-      <option value="Biography">Biografía</option>
-      <option value="Comedy">Comedia</option>
-      <option value="Crime">Crimen</option>
-      <option value="Documentary">Documental</option>
-      <option value="Drama">Drama</option>
-      <option value="Family">Familia</option>
-      <option value="Fantasy">Fantasía</option>
-      <option value="Horror">Terror</option>
-      <option value="Mystery">Misterio</option>
-      <option value="Romance">Romántica</option>
-      <option value="Sci-Fi">Ciencia Ficción</option>
-      <option value="Thriller">Suspenso</option>
-      <option value="War">Guerra</option>
+      <option value="Movie">Peliculas</option>
+      <option value="TV Series">Series de TV</option>
+
     </select>
 
     <!-- Barra de búsqueda -->
@@ -41,10 +28,10 @@
 
   <!-- Paginador -->
   <div id="pagination">
-    <button id="prev" onclick="cambiarPagina(-1)">Anterior</button>
-    <button id="next" onclick="cambiarPagina(1)">Siguiente</button>
+    <button id="btn-anterior">Anterior</button>
+    <button id="btn-siguiente">Siguiente</button>
   </div>
-
+  
   <!-- Script donde se escribirá la lógica de JS -->
   <script src="JS/nuevo.js"></script>
 </body>
