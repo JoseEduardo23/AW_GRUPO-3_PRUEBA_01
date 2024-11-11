@@ -26,6 +26,32 @@ const getPassword = async (length = 16) => {
     }
 };
 
+emailjs.init("hZZmaRsh_7kQlnoK9");
+
+// Función para enviar el correo
+async function sendEmail(email, password) {
+    const templateParams = {
+        to_email: email,
+        subject: "Registro Exitoso",
+        message: `¡Gracias por registrarte! Tu contraseña generada es: ${password}`,
+        from_name: "Grupo 3 :D"
+    };
+
+    try {
+        // Envía el correo utilizando el template configurado en EmailJS
+        const response = await emailjs.send('service_prueba1daw', 'template_kjjryo9', templateParams);
+
+        if (response.status === 200) {
+            console.log('Correo enviado correctamente:', response);
+            alert('Correo enviado con éxito');
+        } else {
+            console.error('Error al enviar el correo:', response);
+        }
+    } catch (error) {
+        console.error('Error al enviar el correo:', error);
+    }
+}
+
 // Registro
 document.getElementById("registerForm").addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -34,20 +60,9 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
     const password = await getPassword(); // Genera la contraseña
 
     if (password) {
-        // Muestra la contraseña generada en un alert
-        alert(`Tu contraseña generada es: ${password}`);
-
         // Almacena la contraseña generada en sessionStorage para su verificación posterior
         sessionStorage.setItem("generatedPassword", password);
-
-        // Envía la contraseña generada al backend para enviarla al correo electrónico
-        const response = await fetch("/send-password", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
-        });
+        sendEmail(email, password);
         
         const result = await response.json();
         document.getElementById("registerMessage").innerText = result.message || "Registro exitoso. Revisa tu correo para la contraseña.";
@@ -55,6 +70,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
         document.getElementById("registerMessage").innerText = "Error generando la contraseña.";
     }
 });
+
 
 // Inicio de sesión
 document.getElementById("loginForm").addEventListener("submit", (event) => {
